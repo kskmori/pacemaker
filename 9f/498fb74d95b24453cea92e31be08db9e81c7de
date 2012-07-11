@@ -1,1 +1,1 @@
-MEMO: preserve behavior; no support for migrate_to/from in 1.0 anymore
+MEMO: preserve behavior; no support for migrate_to/from in 1.0 anymore; see also e05e2e8
