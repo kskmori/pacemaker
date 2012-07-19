@@ -1,0 +1,1 @@
+MEMO: no code in 1.0; but crm_free may be needed in the similar code process_ais_conf() is in lib/ais/plugin.c
