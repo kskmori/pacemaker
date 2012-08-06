@@ -1,1 +1,1 @@
-MEMO: this bug is not affected in 1.0; demote is correctly scheduled in 1.0.12
+MEMO: this bug is not affected in 1.0; demote is correctly scheduled in 1.0.12 but the test case does not pass by run_graph() terminated.
