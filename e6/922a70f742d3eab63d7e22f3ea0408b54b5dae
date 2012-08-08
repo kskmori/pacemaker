@@ -1,1 +1,1 @@
-MEMO: Trac #2048;probably can not fix in 1.0
+MEMO: Trac #2048; the patch only fix the log and we need a different code to resolve in 1.0. we're not going to fix it at least in 1.0.13
