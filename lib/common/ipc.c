@@ -723,11 +723,14 @@ bool
 crm_ipc_connect(crm_ipc_t * client)
 {
     client->need_reply = FALSE;
-    client->ipc = qb_ipcc_connect(client->name, client->buf_size);
-
-    if (client->ipc == NULL) {
-        crm_perror(LOG_INFO, "Could not establish %s connection", client->name);
-        return FALSE;
+    errno = 0;
+    while ((client->ipc = qb_ipcc_connect(client->name, client->buf_size)) == NULL) {
+        if (errno != EAGAIN) {
+            crm_perror(LOG_INFO, "Could not establish %s connection", client->name);
+            return FALSE;
+        }
+        crm_perror(LOG_INFO, "Retrying to establish %s connection", client->name);
+        sleep(1);
     }
 
     client->pfd.fd = crm_ipc_get_fd(client);
